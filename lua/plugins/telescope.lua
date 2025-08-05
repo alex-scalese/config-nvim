@@ -25,7 +25,7 @@ return {
         },
       })
       
-      -- FZF extension laden
+      -- load FZF extension
       telescope.load_extension("fzf")
 
       -- set keymaps

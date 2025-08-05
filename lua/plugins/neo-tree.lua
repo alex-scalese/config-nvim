@@ -45,7 +45,7 @@ return {
               renamed = "",
               untracked = "",   -- maybe "?"
               ignored = "",     -- maybe "◌"
-              unstaged = "󰄱",   -- maybe "✗"
+              unstaged = "",   -- maybe "✗"
               staged = "",      -- maybe "✓"
               conflict = "",    -- maybe "!" or ""
             }
