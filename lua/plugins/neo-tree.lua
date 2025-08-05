@@ -20,34 +20,84 @@ return {
           },
           indent = {
             indent_size = 2,
-            padding = 1,
+            padding = 2,
             with_markers = true,
             indent_marker = "│",
             last_indent_marker = "└",
             highlight = "NeoTreeIndentMarker",
+            with_expanders = true,
+            expander_collapsed = "󰅂", 
+            expander_expanded = "󰅀", 
+            expander_highlight = "NeoTreeExpander",
           },
           icon = {
-            folder_closed = "📁",
-            folder_open = "📂", 
-            folder_empty = "📁",
+            folder_closed = "",
+            folder_open = "", 
+            folder_empty = "",
             default = "📄",
             highlight = "NeoTreeFileIcon"
           },
           git_status = {
             symbols = {
-              added     = "✚",
-              modified  = "",
-              deleted   = "✖",
-              renamed   = "",
-              untracked = "",
-              ignored   = "",
-              unstaged  = "",
-              staged    = "",
-              conflict  = "",
+              added = "",      -- maybe ""
+              modified = "",   -- maybe "M" 
+              deleted = "",
+              renamed = "",
+              untracked = "",   -- maybe "?"
+              ignored = "",     -- maybe "◌"
+              unstaged = "󰄱",   -- maybe "✗"
+              staged = "",      -- maybe "✓"
+              conflict = "",    -- maybe "!" or ""
             }
           },
         },
         
+        renderers = {
+          directory = {
+            { "indent" },
+            { "icon" },
+            { "current_filter" },
+            {
+              "container",
+              width = "100%",
+              right_padding = 1,
+              content = {
+                { "name", use_git_status_colors = true, zindex = 10 },
+                {
+                  "symlink_target",
+                  zindex = 10,
+                  highlight = "NeoTreeSymbolicLinkTarget",
+                },
+                { "clipboard", zindex = 10 },
+                -- Git-Status rechts ausrichten
+                { "git_status", zindex = 20, align = "right" },
+                { "diagnostics", errors_only = true, zindex = 20, align = "right", hide_when_expanded = true },
+              },
+            },
+          },
+          file = {
+            { "indent" },
+            { "icon" },
+            {
+              "container",
+              width = "100%",
+              right_padding = 1,
+              content = {
+                { "name", use_git_status_colors = true, zindex = 10 },
+                {
+                  "symlink_target",
+                  zindex = 10,
+                  highlight = "NeoTreeSymbolicLinkTarget",
+                },
+                { "clipboard", zindex = 10 },
+                -- Git-Status rechts ausrichten
+                { "git_status", zindex = 20, align = "right" },
+                { "diagnostics", errors_only = true, zindex = 20, align = "right" },
+              },
+            },
+          },
+        },
+
         window = {
           position = "left",
           width = 40,
@@ -86,7 +136,7 @@ return {
             ["?"] = "show_help",
           }
         },
-        
+
         filesystem = {
           filtered_items = {
             visible = false,
@@ -104,7 +154,7 @@ return {
           hijack_netrw_behavior = "open_default",
           use_libuv_file_watcher = false,
         },
-        
+
         git_status = {
           window = {
             position = "float",
