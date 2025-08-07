@@ -31,21 +31,21 @@ return {
             expander_highlight = "NeoTreeExpander",
           },
           icon = {
-            folder_closed = "",
-            folder_open = "", 
-            folder_empty = "",
+            folder_closed = " ",
+            folder_open = " ", 
+            folder_empty = " ",
             default = "📄",
             highlight = "NeoTreeFileIcon"
           },
           git_status = {
             symbols = {
               added = "",      -- maybe ""
-              modified = "",   -- maybe "M" 
+              modified = "",   -- maybe "M" 
               deleted = "",
               renamed = "",
-              untracked = "",   -- maybe "?"
+              untracked = "?",   -- maybe "?"
               ignored = "",     -- maybe "◌"
-              unstaged = "",   -- maybe "✗"
+              unstaged = "",   -- maybe "✗"
               staged = "",      -- maybe "✓"
               conflict = "",    -- maybe "!" or ""
             }
