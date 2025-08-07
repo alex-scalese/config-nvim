@@ -3,6 +3,7 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      'ahmedkhalf/project.nvim',
       "nvim-tree/nvim-web-devicons",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -34,6 +35,11 @@ return {
       keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Find in Files" })
       keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent Files" })
       keymap.set("n", "<leader>fc", "<cmd>Telescope commands<cr>", { desc = "Find Commands" })
+      keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", {desc = "Find Projects" })
+
+      -- load project plugin
+      require('telescope').load_extension('projects')
     end,
+
   },
 }

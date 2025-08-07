@@ -19,6 +19,11 @@ return {
         close_command = "bdelete! %d",
         right_mouse_command = "bdelete! %d",
         diagnostics = "nvim_lsp",
+        separator_style = "slant", 
+        indicator = {
+          icon = '▎',
+          style = "underline"
+        },
         always_show_bufferline = false,
         diagnostics_indicator = function(_, _, diag)
           local icons = { Error = " ", Warn = " ", Info = " " }
@@ -33,6 +38,13 @@ return {
             highlight = "Directory",
             text_align = "left",
           },
+        },
+      },
+      highlights = {
+        buffer_selected = {
+          bold = true,
+          underline = true,
+          sp = '#f5c2e7',  
         },
       },
     },
