@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set({ "n", "v"}, "<Space>", "<Nop>", {silent = true})
+vim.keymap.set({ "n"}, "<Space>", "<Nop>", {silent = true})
 
 -- line moving 
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
