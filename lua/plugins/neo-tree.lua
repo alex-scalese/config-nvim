@@ -69,7 +69,6 @@ return {
                   highlight = "NeoTreeSymbolicLinkTarget",
                 },
                 { "clipboard", zindex = 10 },
-                -- Git-Status rechts ausrichten
                 { "git_status", zindex = 20, align = "right" },
                 { "diagnostics", errors_only = true, zindex = 20, align = "right", hide_when_expanded = true },
               },
@@ -90,7 +89,6 @@ return {
                   highlight = "NeoTreeSymbolicLinkTarget",
                 },
                 { "clipboard", zindex = 10 },
-                -- Git-Status on right side
                 { "git_status", zindex = 20, align = "right" },
                 { "diagnostics", errors_only = true, zindex = 20, align = "right" },
               },
