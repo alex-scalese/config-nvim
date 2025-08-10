@@ -37,6 +37,9 @@ return {
       keymap.set("n", "<leader>fc", "<cmd>Telescope commands<cr>", { desc = "Find Commands" })
       keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", {desc = "Find Projects" })
 
+      keymap.set("n", "<leader><F12>", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find Symbols" })
+      keymap.set("n", "<leader><S-F12>", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "Find Workspace Symbols" })
+
       -- load project plugin
       require('telescope').load_extension('projects')
     end,
