@@ -9,8 +9,8 @@ return {
       require("plugins.lsp.keymaps")
       
       -- Setup servers
-      lspconfig.gopls.setup(require("plugins.lsp.settings.gopls"))
-      lspconfig.lua_ls.setup(require("plugins.lsp.settings.lua_ls"))
+      vim.lsp.config.gopls = require("plugins.lsp.settings.gopls")
+      vim.lsp.config.gopls = require("plugins.lsp.settings.lua_ls")
     end,
   },
 }
